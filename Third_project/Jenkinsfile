@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage ('cloning')
+        { steps {
+            git branch 'lakshman', url : 'https://github.com/lakshman-cpu/jenkins'
+        }}
+        stage('remove docker images')
+        {
+            steps {
+                sh ''' docker rmi $(docker images -a -q) '''
+
+            }
+        }
+    }
+}
