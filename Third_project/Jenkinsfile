@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh ''' 
                 git init 
-                git remote add https://github.com/lakshman-cpu/jenkins
+                git remote add origin https://github.com/lakshman-cpu/jenkins
                 git config --global user.name "lakshman"
                 git config --global user.email "lakshmankommineni1@gmail.com"
                 git push origin lucky
