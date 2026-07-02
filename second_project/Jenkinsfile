@@ -1,10 +1,8 @@
 pipeline {
-    agent {
-        docker 
-    }
+    agent any 
 
     stages {
-        stage('name'){
+        stage('clone'){
             steps {
             git branch: 'lakshman', url: 'https://github.com/lakshman-cpu/jenkins'
             }
@@ -13,6 +11,9 @@ pipeline {
         stage('docker image'){
             agent {
                 docker { image 'python3:latest'}
+            }
+            steps {
+                sh '''python3 --version'''
             }
         }
     }
