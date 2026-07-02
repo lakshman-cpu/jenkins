@@ -1,0 +1,17 @@
+pipeline {
+    agent {
+        docker
+    }
+
+    stages {
+        stage('name'){
+            git branch: 'lakshman', url: 'https://github.com/lakshman-cpu/jenkins'
+        }
+
+        stage('docker image'){
+            agent {
+                docker { image 'python3:latest'}
+            }
+        }
+    }
+}
