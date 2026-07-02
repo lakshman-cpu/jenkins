@@ -1,10 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage ('cloning')
-        { 
+        stage ('cloning'){ 
             steps {
-            git branch 'lakshman', url: 'https://github.com/lakshman-cpu/jenkins'
+            git branch: 'lakshman', url: 'https://github.com/lakshman-cpu/jenkins'
 
             }
         }
