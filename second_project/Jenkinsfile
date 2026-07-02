@@ -1,11 +1,13 @@
 pipeline {
     agent {
-        docker
+        docker 
     }
 
     stages {
         stage('name'){
+            steps {
             git branch: 'lakshman', url: 'https://github.com/lakshman-cpu/jenkins'
+            }
         }
 
         stage('docker image'){
