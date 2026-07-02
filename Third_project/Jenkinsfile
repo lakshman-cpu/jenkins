@@ -4,8 +4,8 @@ pipeline {
         stage ('cloning')
         { 
             steps {
-            git branch 'lakshman', url : 'https://github.com/lakshman-cpu/jenkins'
-            
+            git branch 'lakshman', url: 'https://github.com/lakshman-cpu/jenkins'
+
             }
         }
         stage('remove docker images')
