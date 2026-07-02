@@ -7,10 +7,13 @@ pipeline {
 
             }
         }
-        stage('remove docker images')
+        stage('merge')
         {
             steps {
-                sh ''' docker rmi $(docker images -a -q) '''
+                sh ''' 
+                git checkout -b lucky
+                git push origin lucky
+                '''
 
             }
         }
