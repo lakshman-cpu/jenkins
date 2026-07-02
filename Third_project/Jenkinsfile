@@ -17,7 +17,7 @@ pipeline {
                 git remote set-url origin "https://github.com/lakshman-cpu/jenkins"
                 git config --global user.name "lakshman"
                 git config --global user.email "lakshmankommineni1@gmail.com"
-                git push origin lucky
+                git -c credential.helper='!f() { echo "username=${GIT_USER}"; echo "password=${GIT_TOKEN}"; }; f' push origin lucky
                 '''
                                                 }
 
