@@ -12,6 +12,8 @@ pipeline {
             steps {
                 sh ''' 
                 git init 
+                git remote -v 
+                git remote remove origin
                 git remote add origin https://github.com/lakshman-cpu/jenkins
                 git config --global user.name "lakshman"
                 git config --global user.email "lakshmankommineni1@gmail.com"
